@@ -24,7 +24,6 @@ export function GeneralInfo(props) {
             <Input label="E-mail" type="email" name="email" value={person.email} onChange={handlePerson} required={true} />
             <Input label="Phone" type="tel" name="phone" value={person.phone} onChange={handlePerson} required={true} />
             {/* use {fullName} to display it */}
-            <h1>{fullName}</h1>
         </div>
     )
 }
