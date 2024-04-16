@@ -1,43 +1,35 @@
 import { useState } from "react"
 
-// using props for "edit mode" -> all previously submited values get sent here
 export function GeneralInfo(props) {
-    const [firstName, setFirstName] = useState(props.firstName);
-    const [lastName, setLastName] = useState(props.lastName);
-    const [email, setEmail] = useState(props.email);
-    const [phone, setPhone] = useState(props.phone);
+    const [person, setPerson] = useState({
+        firstName: props.firstName,
+        lastName: props.lastName,
+        email: props.email,
+        phone: props.phone
+    });
 
-    const fullName = firstName + " " + lastName;
+    function handlePerson(e) {
+        const {name, value} = e.target;
 
-    function handleFirstName(e) {
-        setFirstName(e.target.value);
+        setPerson(prevPerson => ({...prevPerson, [name]: value}));
     }
 
-    function handleLastName(e) {
-        setLastName(e.target.value);
-    }
-
-    function handleEmail(e) {
-        setEmail(e.target.value);
-    }
-
-    function handlePhone(e) {
-        setPhone(e.target.value);
-    }
+    const fullName = person.firstName + " " + person.lastName;
 
     return (
         <div className="generalInfoSetion">
             <h2 className="sectionTitle">General information</h2>
-            <Input label="First name" type="text" value={firstName} onChange={handleFirstName} />
-            <Input label="Last name" type="text" value={lastName} onChange={handleLastName} />
-            <Input label="E-mail" type="email" value={email} onChange={handleEmail} />
-            <Input label="Phone" type="tel" value={phone} onChange={handlePhone} />
+            <Input label="First name" type="text" name="firstName" value={person.firstName} onChange={handlePerson} required={true} />
+            <Input label="Last name" type="text" name="lastName" value={person.lastName} onChange={handlePerson} required={true} />
+            <Input label="E-mail" type="email" name="email" value={person.email} onChange={handlePerson} required={true} />
+            <Input label="Phone" type="tel" name="phone" value={person.phone} onChange={handlePerson} required={true} />
             {/* use {fullName} to display it */}
+            <h1>{fullName}</h1>
         </div>
     )
 }
 
-function Input({ label, type, onChange, value="" }) {
+export function Input({ label, type, name, onChange, value="", required=false}) {
     return (
         <div className="inputItem">
             <label>
@@ -45,8 +37,10 @@ function Input({ label, type, onChange, value="" }) {
             </label>
             <input
                 type={type}
+                name={name}
                 onChange={onChange}
                 value={value}
+                required={required}
             />
         </div>
     )
