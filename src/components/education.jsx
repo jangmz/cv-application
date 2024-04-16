@@ -37,7 +37,7 @@ export function Education(props) {
                         <Input label="Title of study" type="text" name="title" value={school.title} onChange={(e) => handleChange(index, e)} required={true} />
                         <Input label="Start date" type="date" name="startDate" value={school.startDate} onChange={(e) => handleChange(index, e)} required={true} />
                         <Input label="End date" type="date" name="endDate" value={school.endDate} onChange={(e) => handleChange(index, e)} />
-                        {index > 0 && <button onClick={removeSchool(index)} className="btn">Remove School</button>}
+                        {index > 0 && <button onClick={() => removeSchool(index)} className="btn">Remove School</button>}
                     </div>
                 ))
             }
