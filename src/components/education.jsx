@@ -14,9 +14,6 @@ export function Education(props) {
     }
 
     function addSchool() {
-        /*const newSchools = [...schools];
-        newSchools.push({schoolName: "", title: "", startDate: "", endDate: ""});
-        setSchools(newSchools);*/
         setSchools(prevSchools => ([...prevSchools, {schoolName: "", title: "", startDate: "", endDate: ""}]));
         console.log(schools);
     }
