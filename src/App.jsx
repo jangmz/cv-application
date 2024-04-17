@@ -14,6 +14,30 @@ function App() {
   const [educationData, setEducationData] = useState([]);
   const [experienceData, setExperienceData] = useState([]);
 
+  function handlePrintCV() {
+    console.log("preview call")
+    printCV(Preview(generalInfoData, educationData, experienceData));
+  }
+
+  function printCV(htmlContent) {
+    console.log("printCV call")
+    const printWindow = window.open("", "_blank");
+    printWindow.document.open();
+    printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Preview</title>
+      </head>
+      <body>
+        ${htmlContent}
+      </body>
+    </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
+    printWindow.close();
+  }
+
   return (
     <>
       <div className="header">
@@ -53,6 +77,7 @@ function App() {
           educationData={educationData}
           experienceData={experienceData}
         />
+        <button className="btn" onClick={handlePrintCV}>Print</button>
       </div>
     </>
   )
