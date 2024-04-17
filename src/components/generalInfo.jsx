@@ -27,7 +27,7 @@ export function GeneralInfo(props) {
 
 export function Input({ label, type, name, onChange, value="", required=false}) {
     return (
-        <div className="inputItem">
+        <div className={`inputItem ${type === "checkbox" ? "check-box" : ""}`}>
             <label>
                 {label + " "}
             </label>
