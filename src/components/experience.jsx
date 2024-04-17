@@ -58,7 +58,7 @@ export function Experience(props) {
                         }
                         <Input label="Still working" type="checkbox" name="ongoing" value={experience.ongoing} onChange={() => handleCheckboxChange(index)} />
                         {
-                            index > 0 && <button onClick={() => removeExperience(index)} className="btn">Remove Experience</button>
+                            index > 0 && <button onClick={() => removeExperience(index)} className="btn-remove">Remove</button>
                         }
                     </div>
                 ))

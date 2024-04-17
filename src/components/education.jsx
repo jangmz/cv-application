@@ -54,7 +54,7 @@ export function Education(props) {
                         }
                         <Input label="Still studying" type="checkbox" name="ongoing" value={school.ongoing} onChange={() => handleCheckboxChange(index)} />
                         {
-                            index > 0 && <button onClick={() => removeSchool(index)} className="btn">Remove School</button>
+                            index > 0 && <button onClick={() => removeSchool(index)} className="btn-remove">Remove</button>
                         }
                     </div>
                 ))
