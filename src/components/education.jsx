@@ -3,7 +3,12 @@ import { Input } from "./generalInfo"
 
 export function Education(props) {
     const [schools, setSchools] = useState([
-        {schoolName: "", title: "", startDate: "", endDate: ""}
+        {
+            schoolName: "", 
+            title: "", 
+            startDate: "", 
+            endDate: ""
+        }
     ]);
 
     function handleChange(index, e) {
@@ -32,8 +37,8 @@ export function Education(props) {
                     <div className="schoolSection" key={index}>
                         <Input label="School name" type="text" name="schoolName" value={school.schoolName} onChange={(e) => handleChange(index, e)} required={true} />
                         <Input label="Title of study" type="text" name="title" value={school.title} onChange={(e) => handleChange(index, e)} required={true} />
-                        <Input label="Start date" type="date" name="startDate" value={school.startDate} onChange={(e) => handleChange(index, e)} required={true} />
-                        <Input label="End date" type="date" name="endDate" value={school.endDate} onChange={(e) => handleChange(index, e)} />
+                        <Input label="Start date" type="month" name="startDate" value={school.startDate} onChange={(e) => handleChange(index, e)} required={true} />
+                        <Input label="End date" type="month" name="endDate" value={school.endDate} onChange={(e) => handleChange(index, e)} />
                         {index > 0 && <button onClick={() => removeSchool(index)} className="btn">Remove School</button>}
                     </div>
                 ))
