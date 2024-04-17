@@ -17,23 +17,27 @@ export function Education(props) {
         const newSchools = [...schools]; // copies all schools into temp array
         newSchools[index] = {...newSchools[index], [name]: value}; // copies all school properties and changes only property that triggered the change
         setSchools(newSchools);
+        props.onUpdate(newSchools);
     }
 
     function handleCheckboxChange(index) {
         const newSchools = [...schools];
         newSchools[index] = {...newSchools[index], ongoing: !newSchools[index].ongoing};
         setSchools(newSchools);
+        props.onUpdate(newSchools);
     }
 
     function addSchool() {
-        setSchools(prevSchools => ([...prevSchools, {schoolName: "", title: "", startDate: "", endDate: ""}]));
-        console.log(schools);
+        const newSchools = [...schools, {schoolName: "", title: "", startDate: "", endDate: "", ongoing: false}];
+        setSchools(newSchools);
+        props.onUpdate(newSchools);
     }
 
     function removeSchool(index) {
         const newSchools = [...schools];
         newSchools.splice(index, 1);
         setSchools(newSchools);
+        props.onUpdate(newSchools);
     }
 
     return (

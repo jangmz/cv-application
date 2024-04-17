@@ -18,22 +18,27 @@ export function Experience(props) {
         const newExp = [...experiences]; // copy all exps in temp array
         newExp[index] = {...newExp[index], [name]: value}; // copy all properties of an Object and change the one that triggered the change
         setExperiences(newExp);
+        props.onUpdate(newExp);
     }
 
     function handleCheckboxChange(index) {
         const newExp = [...experiences];
         newExp[index] = {...newExp[index], ongoing: !newExp[index].ongoing};
         setExperiences(newExp);
+        props.onUpdate(newExp);
     }
 
     function removeExperience(index) {
         const newExp = [...experiences]; // temp array
         newExp.splice(index, 1); // removes experiences on detected index
         setExperiences(newExp);
+        props.onUpdate(newExp);
     }
 
     function addExperience() {
-        setExperiences([...experiences, {company: "", position: "", responsibilities: "", startDate: "", endDate: ""}]);
+        const newExp = [...experiences, {company: "", position: "", responsibilities: "", startDate: "", endDate: "", ongoing: false}];
+        setExperiences(newExp);
+        props.onUpdate(newExp);
     }
 
     return (
