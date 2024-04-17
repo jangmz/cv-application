@@ -4,7 +4,7 @@ export function Preview({generalInfoData, educationData, experienceData}) {
     const fullName = fname + " " + lname;
 
     return (
-        <>
+        <div className="cv-preview">
             <div className="general">
                 <h2>General information</h2>
                 <p>Name: {fullName}</p>
@@ -44,6 +44,6 @@ export function Preview({generalInfoData, educationData, experienceData}) {
                         }
                     </ul>
             </div>
-        </>
+        </div>
     )
 }
