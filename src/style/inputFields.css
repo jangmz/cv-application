@@ -1,0 +1,71 @@
+.generalInfoSection,
+.educationSection,
+.experienceSection {
+    background-color: rgb(239, 245, 255);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputItem {
+    display: flex;
+    flex-direction: column;
+}
+.inputItem label {
+    font-weight: 600;
+}
+.inputItem input {
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.inputItem input:hover {
+    border-color: #64acff;
+}
+
+.inputItem.check-box {
+    text-align: center;
+    width: auto;
+}
+.inputItem.check-box input {
+    height: 20px;
+}
+.inputItem.check-box input:hover {
+    border-color: #64acff;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: rgb(162, 211, 252);
+}
+.btn:hover {
+    background-color: rgb(0, 140, 255);
+    color: white;
+    border-color: rgb(0, 140, 255);
+}
+
+.btn-remove {
+    background-color: rgb(255, 152, 152);
+}
+.btn-remove:hover {
+    background-color: rgb(255, 59, 59);
+    color:white;
+    border-color: rgb(255, 59, 59);
+}
+
+/*.sectionTitle {
+
+}*/
+
+.schoolSection,
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
