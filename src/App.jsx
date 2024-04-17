@@ -32,7 +32,7 @@ function App() {
           title="Web Developer"
           startDate="2021-01"
           endDate=""
-          ongoing={true}
+          ongoing={false}
           onUpdate={setEducationData} 
         />
         <Experience 
@@ -41,7 +41,7 @@ function App() {
           responsibilities="Developing web applications"
           startDate="2022-01"
           endDate=""
-          ongoing={true}
+          ongoing={false}
           onUpdate={setExperienceData}
         />
       </div>
