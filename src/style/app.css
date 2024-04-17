@@ -1,7 +1,7 @@
 #root {
     width: 90vw;
     display: grid;
-    grid-template-columns: auto 10% 1fr;
+    grid-template-columns: 1fr 5% 2fr;
     grid-template-rows: auto auto auto;
 }
 
@@ -23,4 +23,5 @@
 .preview {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    justify-self: center;
 }
