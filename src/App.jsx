@@ -4,7 +4,7 @@ import { Education } from './components/education.jsx'
 import { Experience } from './components/experience.jsx'
 import { Preview } from './components/preview.jsx'
 //import reactLogo from './assets/react.svg'
-import './App.css'
+import "./style/app.css"
 
 
 function App() {
