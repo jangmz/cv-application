@@ -4,11 +4,11 @@ import { Input } from "./generalInfo"
 export function Education(props) {
     const [schools, setSchools] = useState([
         {
-            schoolName: "", 
-            title: "", 
-            startDate: "", 
-            endDate: "",
-            ongoing: false
+            schoolName: props.schoolName, 
+            title: props.title, 
+            startDate: props.startDate, 
+            endDate: props.endDate,
+            ongoing: props.ongoing
         }
     ]);
 
