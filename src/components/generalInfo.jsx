@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function GeneralInfo(props) {
+export function GeneralInfo({onUpdate}) {
     const [person, setPerson] = useState({
         firstName: props.firstName,
         lastName: props.lastName,
@@ -10,11 +10,9 @@ export function GeneralInfo(props) {
 
     function handlePerson(e) {
         const {name, value} = e.target;
-
         setPerson(prevPerson => ({...prevPerson, [name]: value}));
+        onUpdate(prevPerson => ({...prevPerson, [name]: value}));
     }
-
-    const fullName = person.firstName + " " + person.lastName;
 
     return (
         <div className="generalInfoSetion">
@@ -23,7 +21,6 @@ export function GeneralInfo(props) {
             <Input label="Last name" type="text" name="lastName" value={person.lastName} onChange={handlePerson} required={true} />
             <Input label="E-mail" type="email" name="email" value={person.email} onChange={handlePerson} required={true} />
             <Input label="Phone" type="tel" name="phone" value={person.phone} onChange={handlePerson} required={true} />
-            {/* use {fullName} to display it */}
         </div>
     )
 }
