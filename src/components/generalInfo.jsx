@@ -15,7 +15,7 @@ export function GeneralInfo(props) {
     }
 
     return (
-        <div className="generalInfoSetion">
+        <div className="generalInfoSection">
             <h2 className="sectionTitle">General information</h2>
             <Input label="First name" type="text" name="firstName" value={person.firstName} onChange={handlePerson} required={true} />
             <Input label="Last name" type="text" name="lastName" value={person.lastName} onChange={handlePerson} required={true} />
