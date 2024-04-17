@@ -16,27 +16,27 @@ function App() {
     <>
       <div className="inputFields">
         <GeneralInfo 
-          firstName=""
-          lastName=""
-          email=""
-          phone=""
+          firstName="John"
+          lastName="Doe"
+          email="johndoe@dev.com"
+          phone="000111222"
           onUpdate={setGeneralInfoData} 
         />
         <Education 
-          schoolName=""
-          title=""
-          startDate=""
+          schoolName="Dev School"
+          title="Web Developer"
+          startDate="2021-01"
           endDate=""
-          ongoing={false}
+          ongoing={true}
           onUpdate={setEducationData} 
         />
         <Experience 
-          company=""
-          position=""
-          responsibilities=""
-          startDate=""
+          company="Dev Co."
+          position="Developer"
+          responsibilities="Developing web applications"
+          startDate="2022-01"
           endDate=""
-          ongoing={false}
+          ongoing={true}
           onUpdate={setExperienceData}
         />
       </div>
