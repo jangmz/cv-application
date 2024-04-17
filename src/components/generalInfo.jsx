@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function GeneralInfo({onUpdate}) {
+export function GeneralInfo(props) {
     const [person, setPerson] = useState({
         firstName: props.firstName,
         lastName: props.lastName,
@@ -11,7 +11,7 @@ export function GeneralInfo({onUpdate}) {
     function handlePerson(e) {
         const {name, value} = e.target;
         setPerson(prevPerson => ({...prevPerson, [name]: value}));
-        onUpdate(prevPerson => ({...prevPerson, [name]: value}));
+        props.onUpdate(prevPerson => ({...prevPerson, [name]: value}));
     }
 
     return (
