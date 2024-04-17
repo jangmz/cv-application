@@ -4,12 +4,12 @@ import { Input } from "./generalInfo";
 export function Experience(props) {
     const [experiences, setExperiences] = useState([
         {
-            company: "", 
-            position: "", 
-            responsibilities: "", 
-            startDate: "", 
-            endDate: "", 
-            ongoing: false
+            company: props.company, 
+            position: props.position, 
+            responsibilities: props.responsibilities, 
+            startDate: props.startDate, 
+            endDate: props.endDate, 
+            ongoing: props.ongoing
         }
     ]);
 
