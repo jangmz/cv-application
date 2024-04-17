@@ -20,6 +20,7 @@ function App() {
         <h1>CV Application</h1>
       </div>
       <div className="inputFields">
+        <h2>Enter your details</h2>
         <GeneralInfo 
           firstName="John"
           lastName="Doe"
