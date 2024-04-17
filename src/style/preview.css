@@ -1,0 +1,49 @@
+.cv-preview {
+    border: 2px solid rgb(155, 155, 155);
+    box-shadow: 5px 5px 5px gray;
+    width: 700px;
+    height: auto;/*990px;*/
+    padding: 30px;
+}
+
+/*.general,
+.education,
+.experience-prev {
+
+}*/
+
+.general h2,
+.education h2,
+.experience-prev h2 {
+    color: rgb(34, 92, 139);
+    border-bottom: 2px solid rgb(34, 92, 139);
+}
+
+.gen-info-data,
+.education-list,
+.experiences-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.education-list,
+.experiences-list {
+    gap: 40px;
+}
+
+.gen-info-data p,
+.education-list p,
+.experiences-list p {
+    margin: 0;
+} 
+
+.education-item,
+.experience-item {
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+}
