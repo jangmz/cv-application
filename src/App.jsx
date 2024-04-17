@@ -5,6 +5,8 @@ import { Experience } from './components/experience.jsx'
 import { Preview } from './components/preview.jsx'
 //import reactLogo from './assets/react.svg'
 import "./style/app.css"
+import "./style/inputFields.css"
+import "./style/preview.css"
 
 
 function App() {
@@ -14,6 +16,9 @@ function App() {
 
   return (
     <>
+      <div className="header">
+        <h1>CV Application</h1>
+      </div>
       <div className="inputFields">
         <GeneralInfo 
           firstName="John"
@@ -41,7 +46,7 @@ function App() {
         />
       </div>
       <div className="preview">
-        <h1>Preview</h1>
+        <h2>Preview</h2>
         <Preview 
           generalInfoData={generalInfoData}
           educationData={educationData}
