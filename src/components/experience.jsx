@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Input } from "./generalInfo";
 
-export function Experience(props) {
+function Experience(props) {
     const [experiences, setExperiences] = useState([
         {
             company: props.company, 
@@ -67,3 +67,5 @@ export function Experience(props) {
         </div>
     )
 }
+
+export default Experience

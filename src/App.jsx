@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import ReactDOMServer from "react-dom/server"
 import { GeneralInfo } from './components/generalInfo.jsx'
-import { Education } from './components/education.jsx'
-import { Experience } from './components/experience.jsx'
-import { Preview } from './components/preview.jsx'
+import Education from './components/education.jsx'
+import Experience from './components/experience.jsx'
+import Preview from './components/preview.jsx'
 //import reactLogo from './assets/react.svg'
 import "./style/app.css"
 import "./style/inputFields.css"
@@ -10,17 +11,45 @@ import "./style/preview.css"
 
 
 function App() {
-  const [generalInfoData, setGeneralInfoData] = useState([]);
-  const [educationData, setEducationData] = useState([]);
-  const [experienceData, setExperienceData] = useState([]);
+  const [generalInfoData, setGeneralInfoData] = useState(
+    {
+      firstName: "John",
+      lastName: "Doe",
+      email: "johndoe@dev.com",
+      phone: "000111222"
+    }
+  );
+  const [educationData, setEducationData] = useState([
+    {
+      schoolName: "Dev School",
+      title: "Web Developer",
+      startDate: "2021-01",
+      endDate: "",
+      ongoing: false
+    }
+  ]);
+  const [experienceData, setExperienceData] = useState([
+    {
+      company: "Dev Co.",
+      position: "Developer",
+      responsibilities: "Developing web applications",
+      startDate: "2022-01",
+      endDate: "",
+      ongoing: false
+    }
+  ]);
 
-  function handlePrintCV() {
-    console.log("preview call")
-    printCV(Preview(generalInfoData, educationData, experienceData));
+  function handlePrint() {
+    console.log("handlePrint call");
+    const HTMLContent = ReactDOMServer.renderToString(
+      Preview({generalInfoData, educationData, experienceData})
+    );
+    printCV(HTMLContent);
   }
 
-  function printCV(htmlContent) {
-    console.log("printCV call")
+  function printCV(HTMLContent) {
+    console.log("printCV call to open window");
+    console.log(HTMLContent);
     const printWindow = window.open("", "_blank");
     printWindow.document.open();
     printWindow.document.write(`
@@ -29,7 +58,7 @@ function App() {
         <title>Print Preview</title>
       </head>
       <body>
-        ${htmlContent}
+        ${HTMLContent}
       </body>
     </html>
     `);
@@ -77,7 +106,7 @@ function App() {
           educationData={educationData}
           experienceData={experienceData}
         />
-        <button className="btn" onClick={handlePrintCV}>Print</button>
+        <button className="btn" onClick={handlePrint}>Print</button>
       </div>
     </>
   )

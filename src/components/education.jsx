@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Input } from "./generalInfo"
 
-export function Education(props) {
+function Education(props) {
     const [schools, setSchools] = useState([
         {
             schoolName: props.schoolName, 
@@ -63,3 +63,5 @@ export function Education(props) {
         </div>
     )
 }
+
+export default Education

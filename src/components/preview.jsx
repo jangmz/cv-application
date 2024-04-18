@@ -1,4 +1,6 @@
-export function Preview({generalInfoData, educationData, experienceData}) {
+import React from "react";
+
+function Preview({generalInfoData, educationData, experienceData}) {
     const fname = generalInfoData.firstName === undefined ? "" : generalInfoData.firstName;
     const lname = generalInfoData.lastName === undefined ? "" : generalInfoData.lastName;
     const fullName = fname + " " + lname;
@@ -49,3 +51,5 @@ export function Preview({generalInfoData, educationData, experienceData}) {
         </div>
     )
 }
+
+export default Preview;
