@@ -1,4 +1,5 @@
 # CV application
+Aplication preview: [CV-Application](https://main--incandescent-gaufre-f0cb67.netlify.app/)
 
 ## Description
 CV application is a web app that allows users to create and preview their CV online. 
